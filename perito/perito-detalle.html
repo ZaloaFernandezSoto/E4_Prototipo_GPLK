@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPLK - Detalle del Parte</title>
+    <link rel="stylesheet" href="../Styles/stylesCliente.css">
+    <link rel="stylesheet" href="../Styles/perito.css">   
+
+</head>
+<body data-page="perito-detalle">
+    <div class="mobile-container">
+        <div class="mobile-box perito-panel-box">
+            <div class="dashboard-header">
+                <div class="header-left">
+                    <div class="logo-small">G</div>
+                    <h1>Detalle del parte</h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn-logout" id="backToListTop">Lista</button>
+                </div>
+            </div>
+
+            <div class="dashboard-content perito-detail-content">
+                <div class="perito-detail-top">
+                    <div>
+                        <p class="perito-id" id="detailClaimId">-</p>
+                        <p class="perito-date" id="detailCreatedAt">-</p>
+                    </div>
+                    <span id="detailStatusBadge" class="badge perito-badge">-</span>
+                </div>
+
+                <div id="detailFeedback" class="perito-feedback"></div>
+
+                <section class="perito-section">
+                    <h2 class="section-title">DATOS GENERALES</h2>
+                    <div class="perito-grid-2">
+                        <div class="perito-info-card">
+                            <h3 class="perito-card-title">Cliente</h3>
+                            <p id="detailCustomerName"></p>
+                            <p id="detailPolicy"></p>
+                            <p id="detailPhone"></p>
+                        </div>
+                        <div class="perito-info-card">
+                            <h3 class="perito-card-title">Siniestro</h3>
+                            <p id="detailIncidentType"></p>
+                            <p id="detailIncidentDate"></p>
+                            <p id="detailIncidentLocation"></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="perito-section">
+                    <h2 class="section-title">FORMULARIO ENVIADO POR EL CLIENTE</h2>
+                    <div id="detailAnswers" class="perito-answer-list"></div>
+                </section>
+
+                <section class="perito-section">
+                    <h2 class="section-title">FOTOGRAFÍAS</h2>
+                    <div id="detailPhotos" class="perito-photo-grid"></div>
+                </section>
+
+                <section class="perito-section" id="aiProposalSection">
+                    <h2 class="section-title">PROPUESTA IA</h2>
+                    <div class="perito-ai-box">
+                        <p><strong>Objeto detectado:</strong> <span id="aiObject"></span></p>
+                        <p><strong>Tipo de daño:</strong> <span id="aiDamage"></span></p>
+                        <p><strong>Escenario:</strong> <span id="aiScenario"></span></p>
+                        <p><strong>Nivel de confianza:</strong> <span id="aiConfidence"></span></p>
+                    </div>
+                </section>
+
+                <section class="perito-section">
+                    <h2 class="section-title">DECISIÓN DEL PERITO</h2>
+                    <div class="perito-decision-group">
+                        <label class="perito-radio-card">
+                            <input type="radio" name="expertDecision" value="APROBAR">
+                            <span>APROBAR</span>
+                        </label>
+                        <label class="perito-radio-card">
+                            <input type="radio" name="expertDecision" value="RECHAZAR">
+                            <span>RECHAZAR</span>
+                        </label>
+                        <label class="perito-radio-card">
+                            <input type="radio" name="expertDecision" value="SOLICITAR_MAS_INFO">
+                            <span>SOLICITAR MÁS INFORMACIÓN</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expertComment" class="perito-label">Comentarios del perito</label>
+                        <textarea
+                            id="expertComment"
+                            class="form-input perito-textarea"
+                            placeholder="Añade observaciones para el expediente"
+                        ></textarea>
+                    </div>
+
+                    <div class="perito-action-row">
+                        <button id="confirmDecisionBtn" class="btn-entrar" type="button">Confirmar decisión</button>
+                        <button id="backToListBtn" class="btn-seguimiento" type="button">Volver a la lista de partes</button>
+                    </div>
+                </section>
+
+                <section class="perito-section">
+                    <h2 class="section-title">HISTORIAL DE ESTADOS</h2>
+                    <div id="detailTimeline" class="perito-timeline"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div id="photoModal" class="perito-modal" role="dialog" aria-modal="true" aria-label="Visor de imagen">
+        <button type="button" id="closePhotoModal" class="perito-modal-close">×</button>
+        <img id="modalPhoto" src="" alt="Foto ampliada del siniestro">
+    </div>
+
+    <script src="perito.js"></script>
+</body>
+</html>

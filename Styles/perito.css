@@ -1,0 +1,461 @@
+/* ============================================
+   ESTILOS PERITO (ADITIVOS)
+   ============================================ */
+
+.perito-mini-note {
+    color: #7a9fb5;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.perito-panel-box {
+    min-height: 84vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.perito-dashboard-content,
+.perito-detail-content {
+    justify-content: flex-start;
+    gap: 18px;
+}
+
+.perito-filters {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(79, 195, 178, 0.18);
+    border-radius: 14px;
+    padding: 14px;
+}
+/* Filtros del perito */
+.perito-filters .form-group {
+    margin-bottom: 10px;
+}
+
+/* Select de estado alineado y a ancho completo */
+.perito-filters .perito-select,
+.perito-filters .form-input {
+    width: 100%;
+    display: block;
+}
+
+.perito-label {
+    color: #7a9fb5;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.perito-select {
+    appearance: none;
+}
+
+.perito-claims-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.perito-claim-card {
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.perito-claim-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.perito-status-row {
+    color: #dce8ef;
+    font-size: 12px;
+}
+
+.perito-detail-btn {
+    width: 100%;
+    padding: 9px 10px;
+}
+
+.perito-empty-message {
+    display: none;
+    color: #7a9fb5;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.perito-detail-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.perito-id {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.perito-date {
+    color: #7a9fb5;
+    font-size: 12px;
+}
+
+.perito-badge {
+    text-transform: none;
+    font-size: 11px;
+}
+
+.perito-badge-registered {
+    background: rgba(150, 150, 150, 0.25);
+    color: #dedede;
+}
+
+.perito-badge-pending {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+.perito-badge-approved {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+}
+
+.perito-badge-rejected {
+    background: rgba(255, 99, 132, 0.22);
+    color: #ff7091;
+}
+
+.perito-badge-more-info {
+    background: rgba(100, 180, 255, 0.2);
+    color: #64b4ff;
+}
+
+.perito-badge-assisted {
+    background: rgba(170, 120, 255, 0.24);
+    color: #c7a8ff;
+}
+
+.perito-feedback {
+    display: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    border: 1px solid transparent;
+}
+
+.perito-feedback-success {
+    background: rgba(76, 175, 80, 0.16);
+    border-color: rgba(76, 175, 80, 0.5);
+    color: #8fe59f;
+}
+
+.perito-feedback-error {
+    background: rgba(255, 99, 132, 0.16);
+    border-color: rgba(255, 99, 132, 0.5);
+    color: #ff9db2;
+}
+
+.perito-section {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(79, 195, 178, 0.15);
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.perito-grid-2 {
+    display: grid;
+    gap: 10px;
+}
+
+.perito-info-card {
+    background: rgba(79, 195, 178, 0.08);
+    border: 1px solid rgba(79, 195, 178, 0.18);
+    border-radius: 10px;
+    padding: 10px;
+    color: #dce8ef;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.perito-card-title {
+    color: #ffffff;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.perito-answer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.perito-answer-item {
+    border-left: 3px solid rgba(79, 195, 178, 0.6);
+    padding-left: 10px;
+}
+
+.perito-question {
+    color: #ffffff;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.perito-answer {
+    color: #b7ccd9;
+    font-size: 12px;
+}
+
+.perito-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.perito-thumb-btn {
+    border: 1px solid rgba(79, 195, 178, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+}
+
+.perito-thumb {
+    width: 100%;
+    height: 78px;
+    object-fit: cover;
+    display: block;
+}
+
+.perito-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 12, 20, 0.88);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 20;
+}
+
+.perito-modal.is-open {
+    display: flex;
+}
+
+.perito-modal img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 14px;
+    border: 1px solid rgba(79, 195, 178, 0.35);
+}
+
+.perito-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 22px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 34px;
+    cursor: pointer;
+}
+
+.perito-ai-box {
+    background: rgba(100, 180, 255, 0.1);
+    border: 1px solid rgba(100, 180, 255, 0.4);
+    border-radius: 10px;
+    padding: 12px;
+    color: #d7e8f8;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.perito-decision-group {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.perito-radio-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(79, 195, 178, 0.08);
+    border: 1px solid rgba(79, 195, 178, 0.22);
+    border-radius: 9px;
+    padding: 8px 10px;
+    color: #dbeaf3;
+    font-size: 12px;
+}
+
+.perito-radio-card input {
+    accent-color: #4fc3b2;
+}
+
+.perito-textarea {
+    min-height: 84px;
+    resize: vertical;
+}
+
+.perito-action-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.perito-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.perito-timeline-item {
+    display: flex;
+    gap: 10px;
+}
+
+.perito-timeline-marker {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 6px;
+    background: #4fc3b2;
+    box-shadow: 0 0 0 4px rgba(79, 195, 178, 0.2);
+    flex-shrink: 0;
+}
+
+.perito-timeline-content {
+    border-left: 1px solid rgba(79, 195, 178, 0.2);
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.perito-timeline-status {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.perito-timeline-date {
+    color: #7a9fb5;
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+.perito-timeline-comment {
+    color: #cadde8;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Fila de estado dentro de la tarjeta */
+.perito-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+/* Texto 'Estado:' */
+.perito-status-row-label {
+    color: #dce8ef;
+    font-size: 12px;
+}
+
+/* Badge más estable y alineado */
+.perito-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    min-width: 90px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: none;
+}
+
+
+
+/* Select de estado con estilo oscuro coherente */
+.perito-select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(79, 195, 178, 0.3);
+    background-color: rgba(79, 195, 178, 0.08);
+    color: #ffffff;
+    font-size: 14px;
+    font-family: inherit;
+    appearance: none;           /* ya lo tenías */
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al hacer foco, igual que los inputs */
+.perito-select:focus {
+    border-color: rgba(79, 195, 178, 0.6);
+    background-color: rgba(79, 195, 178, 0.12);
+    box-shadow: 0 0 10px rgba(79, 195, 178, 0.2);
+}
+
+/* Opciones del desplegable con fondo oscuro */
+.perito-select option {
+    background-color: #0f2940;      /* mismo tono del background general */
+    color: #ffffff;
+}
+
+/* Ajustes perito para escritorio */
+@media (min-width: 768px) {
+    .perito-grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .perito-photo-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .perito-action-row {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .perito-detail-top {
+        align-items: flex-start;
+    }
+}
+
+/* Ajustes específicos para móvil (ancho pequeño) */
+@media (max-width: 480px) {
+  /* La tarjeta de parte se apila en columna */
+  .incidente-card,
+  .perito-claim-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Botón Ver detalle ocupa todo el ancho, debajo del texto */
+  .perito-detail-btn,
+  .btn-seguimiento {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* La fila de Estado puede partir en varias líneas sin romper nada */
+  .perito-status-row {
+    flex-wrap: wrap;
+  }
+
+  /* El badge no fuerza anchura mínima en móvil */
+  .perito-badge {
+    min-width: 0;
+  }
+}

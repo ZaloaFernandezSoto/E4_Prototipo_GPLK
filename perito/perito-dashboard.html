@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPLK - Panel del Perito</title>
+    <link rel="stylesheet" href="../Styles/stylesCliente.css">
+    <link rel="stylesheet" href="../Styles/perito.css">   
+</head>
+<body data-page="perito-dashboard">
+    <div class="mobile-container">
+        <div class="mobile-box perito-panel-box">
+            <div class="dashboard-header">
+                <div class="header-left">
+                    <div class="logo-small">G</div>
+                    <h1>Panel del perito</h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn-logout" id="peritoLogoutBtn">Salir</button>
+                </div>
+            </div>
+
+            <div class="dashboard-content perito-dashboard-content">
+                <div class="perito-filters">
+                    <h2 class="section-title">PARTES PENDIENTES Y EN CURSO</h2>
+                    <div class="form-group">
+                        <label for="statusFilter" class="perito-label">Estado</label>
+                        <select id="statusFilter" class="form-input perito-select">
+                            <option value="all">Todos los estados</option>
+                            <option value="Pendiente validación">Pendiente validación</option>
+                            <option value="Aprobado">Aprobado</option>
+                            <option value="Rechazado">Rechazado</option>
+                            <option value="Más información requerida">Más información requerida</option>
+                            <option value="Revisión perito asistida">Revisión perito asistida</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="searchInput" class="perito-label">Buscar por ID o cliente</label>
+                        <input
+                            type="text"
+                            id="searchInput"
+                            class="form-input"
+                            placeholder="Ej. PAR-2026-1001 o Laura"
+                        >
+                    </div>
+                </div>
+
+                <div id="claimsList" class="perito-claims-list"></div>
+                <p id="emptyStateMessage" class="perito-empty-message">No hay partes para los filtros aplicados.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="perito.js"></script>
+</body>
+</html>
