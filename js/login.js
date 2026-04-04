@@ -52,12 +52,23 @@ function validarLogin() {
         return;
     }
 
-    // Validar credenciales (simulado )
+    // Validar credenciales (simulado)
     if (usuario === CREDENCIALES_VALIDAS.usuario && 
         contrasena === CREDENCIALES_VALIDAS.contrasena) {
         
+        // Guardar sesión
+        sessionStorage.setItem('usuario', usuario);
+        sessionStorage.setItem('logueado', 'true');
+        localStorage.setItem('ultimoLogin', new Date().toLocaleString());
+        
         // Redirigir al dashboard
-        window.location.href = 'dashboard.html';
+        // Detectar si estamos en raíz o en cliente/
+        const isEnCliente = window.location.pathname.includes('/cliente/');
+        if (isEnCliente) {
+            window.location.href = 'dashboard.html';
+        } else {
+            window.location.href = 'cliente/dashboard.html';
+        }
     } else {
         mostrarError('Usuario o contraseña incorrectos');
         // Limpiar campo de contraseña

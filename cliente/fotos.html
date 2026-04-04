@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos del Siniestro</title>
+    <link rel="stylesheet" href="../Styles/stylesCliente.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="mobile-box">
+            <!-- Header -->
+            <div class="dashboard-header">
+                <div class="header-left">
+                    <a href="formulario_v1.html" class="btn-back" style="margin-right: 10px;">←</a>
+                    <h1>Adjuntar Fotos</h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn-logout" onclick="logout()">Salir</button>
+                </div>
+            </div>
+
+            <!-- Contenido del formulario -->
+            <div class="dashboard-content">
+                <form id="fotosForm" class="guided-form">
+                    <!-- FOTOGRAFÍAS DEL SINIESTRO -->
+                    <div class="form-section">
+                        <label class="section-label">Fotografías del Siniestro</label>
+                        <p class="form-hint">Sube al menos una foto del daño. Esto ayuda a acelerar el proceso.</p>
+                        
+                        <!-- Drop Zone para Fotos -->
+                        <div class="drop-zone" id="dropZone">
+                            <div class="drop-zone-icon">📸</div>
+                            <div class="drop-zone-text">
+                                <p class="drop-zone-title">Arrastra tus fotos aquí</p>
+                                <p class="drop-zone-subtitle">o haz clic para seleccionar</p>
+                            </div>
+                            <input type="file" id="fotosInput" name="fotos" multiple accept="image/*" style="display: none;">
+                        </div>
+
+                        <!-- Preview de Fotos -->
+                        <div id="fotosPreview" class="fotos-preview"></div>
+                    </div>
+
+                    <!-- DESCRIPCIÓN OPCIONAL -->
+                    <div class="form-section">
+                        <label class="section-label">Descripción Opcional</label>
+                        <textarea class="textarea-input" placeholder="Ej: Primera foto del lado izquierdo, segunda del daño..." name="descripcionFotos"></textarea>
+                    </div>
+
+                    <button type="button" class="btn-siguiente" onclick="enviarFormulario()">
+                        ✓ Finalizar y Enviar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/fotos.js"></script>
+</body>
+</html>

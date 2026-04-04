@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - Proceso Guiado</title>
+    <link rel="stylesheet" href="../Styles/stylesCliente.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="mobile-box">
+            <!-- Header -->
+            <div class="dashboard-header">
+                <div class="header-left">
+                    <a href="seleccion.html" class="btn-back" style="margin-right: 10px;">←</a>
+                    <h1>Nuevo Parte</h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn-logout" onclick="logout()">Salir</button>
+                </div>
+            </div>
+
+            <!-- Contenido del formulario -->
+            <div class="dashboard-content">
+                <form id="formularioV1" class="guided-form">
+                    <!-- TIPO DE SINIESTRO -->
+                    <div class="form-section">
+                        <label class="section-label">Tipo de Siniestro</label>
+                        <div class="tipo-buttons-v1">
+                            <button type="button" class="tipo-btn-v1" data-tipo="vitrocirama" onclick="seleccionarTipo('vitrocirama', this)">
+                                Vitrocerámica
+                            </button>
+                            <button type="button" class="tipo-btn-v1" data-tipo="cristal" onclick="seleccionarTipo('cristal', this)">
+                                Cristal
+                            </button>
+                            <button type="button" class="tipo-btn-v1" data-tipo="electrodomestico" onclick="seleccionarTipo('electrodomestico', this)">
+                                Electrodoméstico
+                            </button>
+                            <button type="button" class="tipo-btn-v1" data-tipo="otro" onclick="seleccionarTipo('otro', this)">
+                                Otro
+                            </button>
+                        </div>
+                        <input type="hidden" id="tipoSiniestro" name="tipoSiniestro" required>
+                    </div>
+
+                    <!-- DESCRIPCIÓN DEL DAÑO -->
+                    <div class="form-section">
+                        <label class="section-label">Descripción del Daño</label>
+                        <textarea class="textarea-input" placeholder="Describe brevemente qué ocurrió..." name="descripcionDano" required></textarea>
+                    </div>
+
+                    <!-- CUÁNDO OCURRIÓ -->
+                    <div class="form-section">
+                        <label class="section-label">¿Cuándo Ocurrió?</label>
+                        <input type="datetime-local" class="text-input" name="fechaOcurrencia" required>
+                    </div>
+
+                    <!-- PREGUNTAS DINÁMICAS SEGÚN TIPO -->
+                    <div id="preguntasDinamicas"></div>
+
+                    <!-- ¿SE PRODUJERON DAÑOS ADICIONALES? -->
+                    <div class="form-section">
+                        <label class="section-label">¿Se Produjeron Daños Adicionales?</label>
+                        <div class="button-group-v1">
+                            <button type="button" class="btn-opcion" onclick="toglarBoton('si', this)">Sí</button>
+                            <button type="button" class="btn-opcion active" onclick="toglarBoton('no', this)">No</button>
+                        </div>
+                        <input type="hidden" id="danosAdicionales" name="danosAdicionales" value="no">
+                    </div>
+
+                    <!-- CAMPO PARA DAÑOS ADICIONALES (Condicional) -->
+                    <div class="form-section" id="danosAdicionalesField" style="display: none;">
+                        <label class="section-label">Especifica los Daños</label>
+                        <textarea class="textarea-input" placeholder="Describe otros daños..." name="detallesDanosAdicionales"></textarea>
+                    </div>
+
+                    <button type="button" class="btn-siguiente" onclick="irAFotos()">
+                        Añada las fotos del siniestro
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/formulario_v1.js"></script>
+</body>
+</html>
