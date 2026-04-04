@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPLK - Seleccionar Proceso</title>
+    <link rel="stylesheet" href="../Styles/stylesCliente.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Contenedor Principal de Selección -->
+        <div class="mobile-box">
+            <!-- Encabezado de Selección -->
+            <div class="dashboard-header">
+                <div class="header-left">
+                    <a href="dashboard.html" class="btn-back">←</a>
+                    <h1>Tipo de Proceso</h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn-logout" onclick="logout()">Salir</button>
+                </div>
+            </div>
+
+            <!-- Contenido Principal -->
+            <div class="dashboard-content">
+                <!-- Descripción -->
+                <div class="seleccion-description">
+                    <p>Elige cómo deseas reportar tu siniestro</p>
+                </div>
+
+                <!-- Opciones de Proceso -->
+                <div class="seleccion-options">
+                    <!-- Opción 1: Proceso Guiado -->
+                    <a href="formulario_v1.html" class="option-button option-v1">
+                        <div class="option-icon">📋</div>
+                        <div class="option-content">
+                            <h3 class="option-title">Proceso Guiado</h3>
+                            <p class="option-subtitle">Seguir pasos recomendados</p>
+                        </div>
+                        <div class="option-arrow">›</div>
+                    </a>
+
+                    <!-- Opción 2: Análisis con IA -->
+                    <a href="formulario_v2.html" class="option-button option-v2">
+                        <div class="option-icon">🤖</div>
+                        <div class="option-content">
+                            <h3 class="option-title">Análisis con IA</h3>
+                            <p class="option-subtitle">Asistente inteligente</p>
+                        </div>
+                        <div class="option-arrow">›</div>
+                    </a>
+                </div>
+
+                <!-- Texto informativo -->
+                <div class="seleccion-info">
+                    <p>Ambas opciones te ayudarán a completar tu información de forma rápida y segura.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/seleccion.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPLK - Dashboard</title>
-    <link rel="stylesheet" href="Styles/stylesCliente.css">
+    <link rel="stylesheet" href="../Styles/stylesCliente.css">
 </head>
 <body>
     <div class="mobile-container">
@@ -24,13 +24,13 @@
             <!-- Contenido Principal -->
             <div class="dashboard-content">
                 <!-- Botón Nuevo Parte -->
-                <button class="btn-nuevo-parte" onclick="irASeleccion()">
+                <a href="seleccion.html" class="btn-nuevo-parte">
                     <span class="btn-icon">+</span>
                     <div class="btn-text">
                         <p class="btn-title">Nuevo Parte</p>
                         <p class="btn-subtitle">Reportar un siniestro</p>
                     </div>
-                </button>
+                </a>
 
                 <!-- Sección Mis Incidentes/Siniestros -->
                 <div class="incidentes-section">
@@ -68,13 +68,13 @@
                 </div>
 
                 <!-- Botón Ver Todos -->
-                <button class="btn-seguimiento" onclick="irASeguimiento()">
+                <a href="seguimiento.html" class="btn-seguimiento">
                     Ver todos mis siniestros
-                </button>
+                </a>
             </div>
         </div>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
