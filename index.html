@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPLK - Login</title>
+    <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Encabezado de Login -->
+        
+
+        <!-- Contenedor Principal de Login -->
+        <div class="login-box">
+            <!-- Logo y Título -->
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <img src="Images/Logo G.png" alt="Logo GPLK" class="logo-img">
+                </div>
+                <h1 class="logo-title">GPLK</h1>
+                <p class="logo-subtitle">EFICIENCIA GEOMÉTRICA EN SEGUROS</p>
+            </div>
+
+            <!-- Formulario de Login -->
+            <form id="loginForm" class="login-form">
+                <!-- Campo Usuario o Email -->
+                <div class="form-group">
+                    <input 
+                        type="email" 
+                        id="usuario" 
+                        name="usuario"
+                        class="form-input" 
+                        placeholder="Usuario o Email"
+                        value="juan.garcia@empresa.com"
+                        required
+                    >
+                </div>
+
+                <!-- Campo Contraseña -->
+                <div class="form-group">
+                    <input 
+                        type="password" 
+                        id="contrasena" 
+                        name="contrasena"
+                        class="form-input" 
+                        placeholder="Contraseña"
+                        value="••••••••"
+                        required
+                    >
+                </div>
+
+                <!-- Botón Entrar -->
+                <button type="submit" class="btn-entrar">Entrar</button>
+            </form>
+
+            <!-- Enlace Contraseña Olvidada -->
+            <div class="forgot-password">
+                <a href="#" id="forgotLink">¿Olvidaste tu contraseña?</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

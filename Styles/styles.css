@@ -1,0 +1,206 @@
+/* ============================================
+   ESTILOS DEL LOGIN - GPLK
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a3a52 0%, #0f2940 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenedor principal del login */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Etiqueta "A - LOGIN" */
+
+
+/* Caja principal de login */
+.login-box {
+    background: linear-gradient(135deg, rgba(26, 58, 82, 0.95) 0%, rgba(15, 41, 64, 0.95) 100%);
+    border: 1px solid rgba(79, 195, 178, 0.2);
+    border-radius: 30px;
+    padding: 50px 30px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Sección de Logo */
+.logo-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Icono del Logo */
+.logo-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: rgba(79, 195, 178, 0.1);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Título GPLK */
+.logo-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+/* Subtítulo */
+.logo-subtitle {
+    font-size: 11px;
+    color: #7a9fb5;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Formulario */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+/* Grupo de formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Inputs */
+.form-input {
+    padding: 14px 16px;
+    border: 1px solid rgba(79, 195, 178, 0.3);
+    border-radius: 12px;
+    background: rgba(79, 195, 178, 0.08);
+    color: #ffffff;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-input::placeholder {
+    color: #7a9fb5;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: rgba(79, 195, 178, 0.6);
+    background: rgba(79, 195, 178, 0.12);
+    box-shadow: 0 0 10px rgba(79, 195, 178, 0.2);
+}
+
+/* Botón Entrar */
+.btn-entrar {
+    padding: 14px 16px;
+    background: linear-gradient(135deg, #4fc3b2 0%, #3faa9e 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(79, 195, 178, 0.3);
+    margin-top: 10px;
+}
+
+.btn-entrar:hover {
+    background: linear-gradient(135deg, #5cd9c8 0%, #4fc3b2 100%);
+    box-shadow: 0 12px 30px rgba(79, 195, 178, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-entrar:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(79, 195, 178, 0.3);
+}
+
+.btn-entrar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Enlace Contraseña Olvidada */
+.forgot-password {
+    text-align: center;
+}
+
+.forgot-password a {
+    color: #7a9fb5;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.forgot-password a:hover {
+    color: #4fc3b2;
+    border-bottom-color: #4fc3b2;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 40px 20px;
+        border-radius: 20px;
+    }
+
+    .logo-title {
+        font-size: 28px;
+    }
+
+    .logo-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .form-input,
+    .btn-entrar {
+        font-size: 13px;
+        padding: 12px 14px;
+    }
+
+    .logo-section {
+        margin-bottom: 30px;
+    }
+
+    .login-form {
+        gap: 14px;
+    }
+}
