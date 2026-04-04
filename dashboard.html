@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPLK - Dashboard</title>
+    <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Contenedor Principal del Dashboard -->
+         <div class="mobile-box">
+            <!-- Encabezado del Dashboard -->
+            <div class="dashboard-header">
+                <div class="header-left">
+                    <div class="logo-small">G</div>
+                    <h1>Mis Partes</h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn-logout" onclick="logout()">Salir</button>
+                </div>
+            </div>
+
+            <!-- Contenido Principal -->
+            <div class="dashboard-content">
+                <!-- Botón Nuevo Parte -->
+                <button class="btn-nuevo-parte" onclick="irASeleccion()">
+                    <span class="btn-icon">+</span>
+                    <div class="btn-text">
+                        <p class="btn-title">Nuevo Parte</p>
+                        <p class="btn-subtitle">Reportar un siniestro</p>
+                    </div>
+                </button>
+
+                <!-- Sección Mis Incidentes/Siniestros -->
+                <div class="incidentes-section">
+                    <h2 class="section-title">MIS INCIDENTES</h2>
+                    
+                    <div id="incidentesList" class="incidentes-list">
+                        <!-- Los incidentes se cargarán aquí dinámicamente -->
+                        <div class="incidente-card">
+                            <div class="incidente-icon fuego"></div>
+                            <div class="incidente-info">
+                                <p class="incidente-id">#2024-0341</p>
+                                <p class="incidente-tipo">Vitracerámica - Cocina</p>
+                            </div>
+                            <span class="badge badge-pendiente">Pendiente</span>
+                        </div>
+
+                        <div class="incidente-card">
+                            <div class="incidente-icon cristal"></div>
+                            <div class="incidente-info">
+                                <p class="incidente-id">#2024-0298</p>
+                                <p class="incidente-tipo">Cristal - Salón</p>
+                            </div>
+                            <span class="badge badge-validado">Validado</span>
+                        </div>
+
+                        <div class="incidente-card">
+                            <div class="incidente-icon hogar"></div>
+                            <div class="incidente-info">
+                                <p class="incidente-id">#2024-0211</p>
+                                <p class="incidente-tipo">Hogar - General</p>
+                            </div>
+                            <span class="badge badge-enviado">Enviado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón Ver Todos -->
+                <button class="btn-seguimiento" onclick="irASeguimiento()">
+                    Ver todos mis siniestros
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

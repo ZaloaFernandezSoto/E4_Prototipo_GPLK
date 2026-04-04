@@ -52,7 +52,7 @@ function validarLogin() {
         return;
     }
 
-    // Validar credenciales (simulado - en producción sería con servidor)
+    // Validar credenciales (simulado )
     if (usuario === CREDENCIALES_VALIDAS.usuario && 
         contrasena === CREDENCIALES_VALIDAS.contrasena) {
         
