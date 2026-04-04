@@ -1125,3 +1125,13 @@ body {
         font-size: 11px;
     }
 }
+
+@media (min-width: 768px) {
+    .mobile-container {
+        max-width: 960px;    /* Más ancho en PC */
+    }
+
+    .dashboard-content {
+        padding: 40px 32px;
+    }
+}
