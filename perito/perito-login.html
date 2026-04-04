@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPLK - Acceso Perito</title>
+    <link rel="stylesheet" href="../Styles/stylesCliente.css">
+    <link rel="stylesheet" href="../Styles/perito.css">   
+
+</head>
+<body data-page="perito-login">
+    <div class="mobile-container">
+        <div class="mobile-box">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <img src="../Images/Logo G.png" alt="Logo GPLK" class="logo-img">
+                </div>
+                <h1 class="logo-title">GPLK</h1>
+                <p class="logo-subtitle">PANEL DEL PERITO</p>
+            </div>
+
+            <form id="peritoLoginForm" class="login-form">
+                <div class="form-group">
+                    <input
+                        type="text"
+                        id="expertUser"
+                        class="form-input"
+                        placeholder="Usuario"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <input
+                        type="password"
+                        id="expertPassword"
+                        class="form-input"
+                        placeholder="Contraseña"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-entrar">Acceder</button>
+            </form>
+
+            <p class="perito-mini-note">Acceso de demostración para validación de partes (simulado).</p>
+        </div>
+    </div>
+
+    <script src="perito.js"></script>
+</body>
+</html>
