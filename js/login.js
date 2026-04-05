@@ -1,81 +1,48 @@
-// Validación de credenciales
-const CREDENCIALES_VALIDAS = {
-    usuario: "juan.garcia@empresa.com",
-    contrasena: "password123"
-};
+// Login unificado - Distinción automática Cliente/Perito por email
 
+function validarLogin() {
+    const usuario = document.getElementById('usuario').value.trim();
+    const contrasena = document.getElementById('contrasena').value;
+    
+    if (!usuario || !contrasena || contrasena === '••••••••') {
+        alert('Por favor completa los campos');
+        return false;
+    }
+    
+    // Determinar si es Perito o Cliente según el email
+    const esPerito = usuario.toLowerCase().includes('@perito');
+    
+    if (esPerito) {
+        // Login como Perito
+        localStorage.setItem('usuarioTipo', 'perito');
+        localStorage.setItem('usuarioNombre', usuario);
+        window.location.href = 'perito/perito-dashboard.html';
+    } else {
+        // Login como Cliente
+        localStorage.setItem('usuarioTipo', 'cliente');
+        localStorage.setItem('usuarioNombre', usuario);
+        window.location.href = 'cliente/dashboard.html';
+    }
+    
+    return false;
+}
+
+// Manejo del enlace de contraseña olvidada
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
-    const usuarioInput = document.getElementById('usuario');
-    const contrasenaInput = document.getElementById('contrasena');
     const forgotLink = document.getElementById('forgotLink');
-
-    // Manejar el envío del formulario
+    
     if (loginForm) {
         loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
             validarLogin();
         });
     }
-
-    // Manejar el enlace de contraseña olvidada
+    
     if (forgotLink) {
         forgotLink.addEventListener('click', function(e) {
             e.preventDefault();
-            alert('Funcionalidad de recuperación de contraseña próximamente');
-        });
-    }
-
-    // Limpiar campos de contraseña al enfocar (si contienen el placeholder)
-    if (contrasenaInput) {
-        contrasenaInput.addEventListener('focus', function() {
-            if (this.value === '••••••••') {
-                this.value = '';
-            }
-        });
-
-        contrasenaInput.addEventListener('blur', function() {
-            if (this.value === '') {
-                this.value = '••••••••';
-            }
+            window.location.href = 'recuperar-contraseña.html';
         });
     }
 });
-
-function validarLogin() {
-    const usuario = document.getElementById('usuario').value.trim();
-    const contrasena = document.getElementById('contrasena').value;
-
-    // Validar que los campos no estén vacíos
-    if (!usuario || !contrasena || contrasena === '••••••••') {
-        mostrarError('Por favor, introduce tus credenciales');
-        return;
-    }
-
-    // Validar credenciales (simulado)
-    if (usuario === CREDENCIALES_VALIDAS.usuario && 
-        contrasena === CREDENCIALES_VALIDAS.contrasena) {
-        
-        // Guardar sesión
-        sessionStorage.setItem('usuario', usuario);
-        sessionStorage.setItem('logueado', 'true');
-        localStorage.setItem('ultimoLogin', new Date().toLocaleString());
-        
-        // Redirigir al dashboard
-        // Detectar si estamos en raíz o en cliente/
-        const isEnCliente = window.location.pathname.includes('/cliente/');
-        if (isEnCliente) {
-            window.location.href = 'dashboard.html';
-        } else {
-            window.location.href = 'cliente/dashboard.html';
-        }
-    } else {
-        mostrarError('Usuario o contraseña incorrectos');
-        // Limpiar campo de contraseña
-        document.getElementById('contrasena').value = '••••••••';
-    }
-}
-
-function mostrarError(mensaje) {
-    alert(mensaje);
-}

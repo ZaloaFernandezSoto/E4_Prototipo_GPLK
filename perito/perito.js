@@ -204,10 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const page = document.body.dataset.page;
 
-    if (page === 'perito-login') {
-        initExpertLogin();
-    }
-
     if (page === 'perito-dashboard') {
         initExpertDashboard();
     }
@@ -233,18 +229,6 @@ function saveClaims(claims) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(claims));
 }
 
-function initExpertLogin() {
-    const loginForm = document.getElementById('peritoLoginForm');
-    if (!loginForm) {
-        return;
-    }
-
-    loginForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        window.location.href = 'perito-dashboard.html';
-    });
-}
-
 function initExpertDashboard() {
     const statusFilter = document.getElementById('statusFilter');
     const searchInput = document.getElementById('searchInput');
@@ -262,7 +246,9 @@ function initExpertDashboard() {
 
     if (logoutBtn) {
         logoutBtn.addEventListener('click', () => {
-            window.location.href = 'perito-login.html';
+            localStorage.clear();
+            sessionStorage.clear();
+            window.location.href = '../index.html';
         });
     }
 }

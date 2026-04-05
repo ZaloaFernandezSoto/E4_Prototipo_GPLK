@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento - GPLK</title>
+    <link rel="stylesheet" href="../Styles/stylesCliente.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="mobile-box">
+            <!-- Header -->
+            <div class="dashboard-header">
+                <div class="header-left">
+                    <a href="dashboard.html" class="btn-back" style="margin-right: 10px;">←</a>
+                    <h1>Mis Partes</h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn-logout" onclick="logout()">Salir</button>
+                </div>
+            </div>
+
+            <!-- Contenido -->
+            <div class="dashboard-content">
+                <!-- Encabezado del Parte -->
+                <div class="seguimiento-header">
+                    <div class="parte-id">#2024-0341</div>
+                    <div class="parte-datos">
+                        <div class="dato-fila">
+                            <span class="dato-label">Tipo</span>
+                            <span class="dato-valor">Vitrocerámica</span>
+                        </div>
+                        <div class="dato-fila">
+                            <span class="dato-label">Póliza</span>
+                            <span class="dato-valor">POL-2024-00892</span>
+                        </div>
+                        <div class="dato-fila">
+                            <span class="dato-label">Fecha</span>
+                            <span class="dato-valor">03/04/2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seguimiento del Parte -->
+                <div class="seguimiento-seccion">
+                    <h3 class="section-label" style="margin-bottom: 20px;">Seguimiento del Parte</h3>
+
+                    <!-- Timeline de estados -->
+                    <div class="timeline">
+                        <!-- Estado 1: Enviado -->
+                        <div class="timeline-item completed">
+                            <div class="timeline-marker">
+                                <span class="marker-icon">✓</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">Enviado</h4>
+                                <p class="timeline-date">03 abr - 14:32h</p>
+                            </div>
+                        </div>
+
+                        <!-- Estado 2: Pendiente de validación -->
+                        <div class="timeline-item active">
+                            <div class="timeline-marker">
+                                <span class="marker-number">2</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">Pendiente de validación</h4>
+                                <p class="timeline-date">En revisión por el perito</p>
+                            </div>
+                        </div>
+
+                        <!-- Estado 3: Resultado final -->
+                        <div class="timeline-item pending">
+                            <div class="timeline-marker">
+                                <span class="marker-number">3</span>
+                            </div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">Resultado final</h4>
+                                <p class="timeline-date">Próximamente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón Finalizar -->
+                <button type="button" class="btn-siguiente" onclick="finalizarSeguimiento()">
+                    ✓ Finalizar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/seguimiento.js"></script>
+</body>
+</html>

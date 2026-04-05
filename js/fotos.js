@@ -94,11 +94,8 @@ function enviarFormulario() {
         timestamp: new Date().toLocaleString()
     }));
 
-    // Simular envío
-    alert('¡Siniestro registrado exitosamente!\nTu número de referencia será enviado por email.');
-    
-    // Ir a confirmación
-    window.location.href = 'dashboard.html';
+    // Ir a procesando (que después va a seguimiento)
+    window.location.href = 'procesando.html';
 }
 
 function volverAtras() {

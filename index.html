@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPLK - Login</title>
-    <link rel="stylesheet" href="Styles/styles.css">
+    <title>GPLK - Acceso</title>
+    <link rel="stylesheet" href="Styles/stylesCliente.css">
 </head>
 <body>
     <div class="mobile-container">
@@ -19,9 +19,8 @@
                 <p class="logo-subtitle">EFICIENCIA GEOMÉTRICA EN SEGUROS</p>
             </div>
 
-            <!-- Formulario de Login -->
-            <form id="loginForm" class="login-form" action="cliente/dashboard.html" method="GET">
-                <!-- Campo Usuario o Email -->
+            <!-- Formulario de Login Unificado -->
+            <form id="loginForm" class="login-form" onsubmit="return validarLogin()">
                 <div class="form-group">
                     <input 
                         type="email" 
@@ -34,7 +33,6 @@
                     >
                 </div>
 
-                <!-- Campo Contraseña -->
                 <div class="form-group">
                     <input 
                         type="password" 
@@ -47,13 +45,18 @@
                     >
                 </div>
 
-                <!-- Botón Entrar -->
                 <button type="submit" class="btn-entrar">Entrar</button>
             </form>
 
             <!-- Enlace Contraseña Olvidada -->
             <div class="forgot-password">
                 <a href="#" id="forgotLink">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <!-- Nota informativa -->
+            <div class="login-note">
+                <p><strong>👤 Cliente:</strong> juan.garcia@empresa.com</p>
+                <p><strong>👨‍💼 Perito:</strong> nombre@perito.com</p>
             </div>
         </div>
     </div>

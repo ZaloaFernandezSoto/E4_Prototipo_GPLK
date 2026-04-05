@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesando - GPLK</title>
+    <link rel="stylesheet" href="../Styles/stylesCliente.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="mobile-box">
+            <!-- Header -->
+            <div class="dashboard-header">
+                <div class="header-left">
+                    <h1>Procesando...</h1>
+                </div>
+            </div>
+
+            <!-- Contenido -->
+            <div class="dashboard-content">
+                <div class="procesando-container">
+                    <!-- Animación de carga -->
+                    <div class="loading-animation">
+                        <div class="spinner"></div>
+                    </div>
+
+                    <!-- Mensaje -->
+                    <div class="procesando-message">
+                        <h2>Analizando tu siniestro</h2>
+                        <p class="procesando-text">Estamos procesando la información y fotos de tu parte. Por favor espera...</p>
+                    </div>
+
+                    <!-- Indicador de progreso -->
+                    <div class="progress-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/procesando.js"></script>
+</body>
+</html>

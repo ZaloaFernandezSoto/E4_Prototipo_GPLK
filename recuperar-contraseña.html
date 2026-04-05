@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - GPLK</title>
+    <link rel="stylesheet" href="Styles/stylesCliente.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Contenedor Principal -->
+        <div class="mobile-box">
+            <!-- Logo y Título -->
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <img src="Images/Logo G.png" alt="Logo GPLK" class="logo-img">
+                </div>
+                <h1 class="logo-title">GPLK</h1>
+                <p class="logo-subtitle">RECUPERAR CONTRASEÑA</p>
+            </div>
+
+            <!-- Formulario de Recuperación -->
+            <form id="recuperarForm" class="login-form" onsubmit="return procesarRecuperacion()">
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="form-label">Email o Usuario</label>
+                    <input 
+                        type="email" 
+                        id="emailRecuperacion" 
+                        name="email"
+                        class="form-input" 
+                        placeholder="tu.email@ejemplo.com"
+                        required
+                    >
+                </div>
+
+                <!-- Nueva Contraseña -->
+                <div class="form-group">
+                    <label class="form-label">Nueva Contraseña</label>
+                    <input 
+                        type="password" 
+                        id="nuevaContrasena" 
+                        name="nuevaContrasena"
+                        class="form-input" 
+                        placeholder="Ingresa nueva contraseña"
+                        required
+                    >
+                </div>
+
+                <!-- Confirmar Contraseña -->
+                <div class="form-group">
+                    <label class="form-label">Confirmar Contraseña</label>
+                    <input 
+                        type="password" 
+                        id="confirmarContrasena" 
+                        name="confirmarContrasena"
+                        class="form-input" 
+                        placeholder="Confirma la contraseña"
+                        required
+                    >
+                </div>
+
+                <!-- Botón Enviar -->
+                <button type="submit" class="btn-entrar">Enviar</button>
+            </form>
+
+            <!-- Enlace Volver -->
+            <div class="forgot-password">
+                <a href="index.html">← Volver al login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/recuperar-contraseña.js"></script>
+</body>
+</html>

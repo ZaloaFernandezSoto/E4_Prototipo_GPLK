@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - Análisis Rápido</title>
+    <link rel="stylesheet" href="../Styles/stylesCliente.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="mobile-box">
+            <!-- Header -->
+            <div class="dashboard-header">
+                <div class="header-left">
+                    <a href="seleccion.html" class="btn-back" style="margin-right: 10px;">←</a>
+                    <h1>Parte Rápido</h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn-logout" onclick="logout()">Salir</button>
+                </div>
+            </div>
+
+            <!-- Contenido del formulario -->
+            <div class="dashboard-content">
+                <form id="formularioV2" class="guided-form">
+                    <!-- BADGE IA ACTIVADO -->
+                    <div class="form-section">
+                        <div class="badge-ia-activado">
+                            <span class="badge-ia-icon">✓</span>
+                            <span class="badge-ia-text">Análisis IA activado</span>
+                        </div>
+                    </div>
+
+                    <!-- NOMBRE ASEGURADO -->
+                    <div class="form-section">
+                        <label class="section-label">Nombre Asegurado</label>
+                        <input type="text" class="text-input readonly-input" value="Juan García López" readonly>
+                    </div>
+
+                    <!-- NÚMERO DE PÓLIZA -->
+                    <div class="form-section">
+                        <label class="section-label">Número de Póliza</label>
+                        <input type="text" class="text-input readonly-input" value="POL-2024-00892" readonly>
+                    </div>
+
+                    <!-- FECHA Y HORA -->
+                    <div class="form-section">
+                        <label class="section-label">Fecha y Hora</label>
+                        <input type="text" class="text-input readonly-input" value="03/04/2025 - 14:30h" readonly>
+                    </div>
+
+                    <!-- UBICACIÓN -->
+                    <div class="form-section">
+                        <label class="section-label">Ubicación</label>
+                        <div class="ubicacion-input-group">
+                            <input type="text" class="text-input readonly-input" value="Calle Mayor 12, Vitoria" readonly>
+                            <span class="ubicacion-icon">📍</span>
+                        </div>
+                    </div>
+
+                    <!-- DESCRIPCIÓN CORTA -->
+                    <div class="form-section">
+                        <label class="section-label">Descripción Breve</label>
+                        <textarea class="textarea-input" placeholder="Describe brevemente el siniestro..." name="descripcionBreve" required></textarea>
+                    </div>
+
+                    <!-- AVISO IA -->
+                    <div class="form-section">
+                        <div class="aviso-ia">
+                            <span class="aviso-ia-icon">🤖</span>
+                            <p class="aviso-ia-text">Las fotos completarán el análisis automático del siniestro</p>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-siguiente" onclick="irAFotos()">
+                        Añada las fotos del siniestro
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/formulario_v2.js"></script>
+</body>
+</html>

@@ -92,10 +92,41 @@ body {
     margin-bottom: 20px;
 }
 
+/* Nota informativa de login */
+.login-note {
+    background: rgba(79, 195, 178, 0.08);
+    border: 1px solid rgba(79, 195, 178, 0.3);
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 16px;
+    font-size: 11px;
+    color: #7a9fb5;
+    line-height: 1.6;
+}
+
+.login-note p {
+    margin: 6px 0;
+}
+
+.login-note strong {
+    color: #4fc3b2;
+    font-weight: 700;
+}
+
 /* Grupo de formulario */
 .form-group {
     display: flex;
     flex-direction: column;
+}
+
+/* Label de formulario */
+.form-label {
+    color: #7a9fb5;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
 }
 
 /* Inputs */
@@ -1126,6 +1157,122 @@ body {
     }
 }
 
+/* ============================================
+   ESTILOS PARA FORMULARIO V2 - ANÁLISIS RÁPIDO
+   ============================================ */
+
+/* Badge IA Activado */
+.badge-ia-activado {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(76, 175, 80, 0.15);
+    border: 1.5px solid rgba(76, 175, 80, 0.4);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+}
+
+.badge-ia-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.badge-ia-text {
+    color: #4caf50;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Inputs de solo lectura */
+.readonly-input {
+    background: rgba(79, 195, 178, 0.05) !important;
+    cursor: not-allowed;
+}
+
+.readonly-input:focus {
+    background: rgba(79, 195, 178, 0.05) !important;
+    box-shadow: none !important;
+}
+
+/* Grupo de Ubicación con Icon */
+.ubicacion-input-group {
+    position: relative;
+    display: flex;
+}
+
+.ubicacion-input-group .text-input {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.ubicacion-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    pointer-events: none;
+}
+
+/* Aviso IA */
+.aviso-ia {
+    background: rgba(79, 195, 178, 0.12);
+    border: 1.5px solid rgba(79, 195, 178, 0.3);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.aviso-ia-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.aviso-ia-text {
+    color: #7a9fb5;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsive Formulario V2 */
+@media (max-width: 480px) {
+    .badge-ia-activado {
+        padding: 9px 12px;
+    }
+
+    .badge-ia-text {
+        font-size: 11px;
+    }
+
+    .aviso-ia {
+        padding: 14px;
+    }
+
+    .aviso-ia-icon {
+        font-size: 20px;
+    }
+
+    .aviso-ia-text {
+        font-size: 12px;
+    }
+}
+
 @media (min-width: 768px) {
     .mobile-container {
         max-width: 960px;    /* Más ancho en PC */
@@ -1133,5 +1280,270 @@ body {
 
     .dashboard-content {
         padding: 40px 32px;
+    }
+}
+
+/* ============================================
+   ESTILOS PARA PROCESANDO - ANIMACIÓN DE CARGA
+   ============================================ */
+
+.procesando-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    gap: 40px;
+}
+
+/* Spinner de carga */
+.loading-animation {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.spinner {
+    width: 100%;
+    height: 100%;
+    border: 4px solid rgba(79, 195, 178, 0.2);
+    border-top: 4px solid #4fc3b2;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mensaje de procesamiento */
+.procesando-message {
+    text-align: center;
+}
+
+.procesando-message h2 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.procesando-text {
+    color: #7a9fb5;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Dots de progreso */
+.progress-dots {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(79, 195, 178, 0.3);
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: linear-gradient(135deg, #4fc3b2 0%, #3faa9e 100%);
+    box-shadow: 0 0 12px rgba(79, 195, 178, 0.4);
+    transform: scale(1.2);
+}
+
+/* ============================================
+   ESTILOS PARA SEGUIMIENTO - ESTADO DEL PARTE
+   ============================================ */
+
+/* Encabezado del Parte */
+.seguimiento-header {
+    background: rgba(79, 195, 178, 0.08);
+    border: 1.5px solid rgba(79, 195, 178, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.parte-id {
+    display: inline-block;
+    background: linear-gradient(135deg, #4fc3b2 0%, #3faa9e 100%);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.parte-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dato-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dato-label {
+    color: #7a9fb5;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dato-valor {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Sección de Seguimiento */
+.seguimiento-seccion {
+    margin-bottom: 30px;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 40px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(79, 195, 178, 0.3) 0%, rgba(79, 195, 178, 0.1) 100%);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.timeline-marker {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+    z-index: 1;
+    background: rgba(26, 58, 82, 0.95);
+    border: 2px solid rgba(79, 195, 178, 0.3);
+}
+
+/* Estado completado */
+.timeline-item.completed .timeline-marker {
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    border-color: #4caf50;
+    color: #ffffff;
+}
+
+/* Estado activo */
+.timeline-item.active .timeline-marker {
+    background: linear-gradient(135deg, #4fc3b2 0%, #3faa9e 100%);
+    border-color: #4fc3b2;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(79, 195, 178, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(79, 195, 178, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(79, 195, 178, 0.6); }
+}
+
+/* Estado pendiente */
+.timeline-item.pending .timeline-marker {
+    background: rgba(79, 195, 178, 0.1);
+    border-color: rgba(79, 195, 178, 0.3);
+    color: #7a9fb5;
+}
+
+.timeline-item.pending .timeline-title,
+.timeline-item.pending .timeline-date {
+    opacity: 0.6;
+}
+
+/* Contenido del timeline */
+.timeline-content {
+    flex: 1;
+    padding-top: 4px;
+}
+
+.timeline-title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.timeline-date {
+    color: #7a9fb5;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* Responsive Seguimiento */
+@media (max-width: 480px) {
+    .procesando-container {
+        min-height: 300px;
+        gap: 30px;
+    }
+
+    .loading-animation {
+        width: 80px;
+        height: 80px;
+    }
+
+    .procesando-message h2 {
+        font-size: 18px;
+    }
+
+    .procesando-text {
+        font-size: 13px;
+    }
+
+    .seguimiento-header {
+        padding: 16px;
+        margin-bottom: 24px;
+    }
+
+    .dato-fila {
+        font-size: 13px;
+    }
+
+    .timeline-marker {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .timeline::before {
+        left: 13px;
+    }
+
+    .timeline-item {
+        gap: 16px;
     }
 }
