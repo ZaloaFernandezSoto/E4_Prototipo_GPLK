@@ -416,6 +416,12 @@ body {
     flex-shrink: 0;
 }
 
+.incidente-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
 .incidente-icon.fuego {
     background: rgba(255, 107, 53, 0.2);
     color: #ff6b35;
@@ -599,6 +605,15 @@ body {
 .option-icon {
     font-size: 32px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
 }
 
 /* Contenido de Opción */
@@ -1035,6 +1050,15 @@ body {
 .drop-zone-icon {
     font-size: 40px;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop-zone-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
 }
 
 .drop-zone-text {
@@ -1054,6 +1078,24 @@ body {
     color: #7a9fb5;
     font-size: 12px;
     margin: 0;
+}
+
+/* Contador de fotos */
+.fotos-contador {
+    display: inline-block;
+    background: rgba(79, 195, 178, 0.12);
+    border: 1px solid rgba(79, 195, 178, 0.3);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #7a9fb5;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.fotos-contador span {
+    color: #4fc3b2;
+    font-weight: 700;
 }
 
 /* Preview Grid */

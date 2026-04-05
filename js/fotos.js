@@ -37,8 +37,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function procesarArchivos(files) {
+    const MAX_FOTOS = 3;
+    let fotosAAnadir = 0;
+    
     for (let file of files) {
+        // Validar que no hemos alcanzado el máximo
+        if (fotosSeleccionadas.length + fotosAAnadir >= MAX_FOTOS) {
+            break;
+        }
+        
         if (file.type.startsWith('image/')) {
+            fotosAAnadir++;
             const reader = new FileReader();
             reader.onload = function(e) {
                 fotosSeleccionadas.push({
@@ -50,13 +59,25 @@ function procesarArchivos(files) {
             reader.readAsDataURL(file);
         }
     }
+    
+    // Mostrar alerta si intentó añadir más del máximo
+    if (files.length > fotosAAnadir) {
+        alert(`Solo puedes subir máximo 3 fotos. Ya tienes ${fotosSeleccionadas.length} foto(s).`);
+    }
 }
 
 function mostrarPreviews() {
     const fotosPreview = document.getElementById('fotosPreview');
     const dropZone = document.getElementById('dropZone');
+    const fotosCount = document.getElementById('fotosCount');
+    const MAX_FOTOS = 3;
     
     fotosPreview.innerHTML = '';
+    
+    // Actualizar contador
+    if (fotosCount) {
+        fotosCount.textContent = fotosSeleccionadas.length;
+    }
     
     fotosSeleccionadas.forEach((foto, index) => {
         const div = document.createElement('div');
@@ -69,10 +90,17 @@ function mostrarPreviews() {
         fotosPreview.appendChild(div);
     });
 
-    if (fotosSeleccionadas.length > 0) {
-        dropZone.style.display = 'none';
-    } else {
+    // Mostrar drop-zone solo si no hemos alcanzado el máximo
+    if (fotosSeleccionadas.length < MAX_FOTOS) {
         dropZone.style.display = 'flex';
+        
+        // Cambiar mensaje si ya hay fotos
+        if (fotosSeleccionadas.length > 0) {
+            dropZone.querySelector('.drop-zone-title').textContent = 'Añadir más fotos (opcional)';
+            dropZone.querySelector('.drop-zone-subtitle').textContent = 'Tienes ' + (MAX_FOTOS - fotosSeleccionadas.length) + ' máximo';
+        }
+    } else {
+        dropZone.style.display = 'none';
     }
 }
 
@@ -83,7 +111,12 @@ function eliminarFoto(index) {
 
 function enviarFormulario() {
     if (fotosSeleccionadas.length === 0) {
-        alert('Por favor adjunta al menos una foto del siniestro');
+        alert('Por favor adjunta al menos 1 foto del siniestro');
+        return;
+    }
+
+    if (fotosSeleccionadas.length > 3) {
+        alert('No puedes subir más de 3 fotos');
         return;
     }
 
